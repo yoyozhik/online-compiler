@@ -1,0 +1,17 @@
+version: "2"
+services: 
+  mongodb: 
+    image: "mongo:3.0.6"
+    container_name: "mongo"
+  training: 
+    build: 
+      context: "."
+    container_name: "training"
+    depends_on:
+      - mongodb
+    environment: 
+      MONGODB_URI: "mongodb://mongodb:27017/training"
+    links: 
+      - mongodb
+    ports: 
+      - "8080:8080"
