@@ -60,6 +60,11 @@ public class FileOperationsImpl implements FileOperations {
 		
 	}
 	
+	/*
+	* Check the syntax and return compiler errors if any.
+	* Uses java compiler and diagnostics tool
+	*
+	*/
 	@Loggable
 	@Override
 	public List<String> syntaxChecker(String file) {
