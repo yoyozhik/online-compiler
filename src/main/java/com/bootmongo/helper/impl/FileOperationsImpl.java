@@ -106,6 +106,9 @@ public class FileOperationsImpl implements FileOperations {
 	    return results;
 	}
 
+	/**
+	* Execute a system process from the jvm
+	*/
 	private List<String> runProcess(String command) throws Exception {
 		Process pro = Runtime.getRuntime().exec(command);
 	    List<String> output = new ArrayList<String>();
