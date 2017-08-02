@@ -36,7 +36,13 @@ public class AppController {
 	
 	@Autowired
 	private Mapper dozerMapper;
-	
+
+	/**
+	 * Saves the user entered code snippet as a Java file.
+	 * Save the file in Mongo DB
+	 *
+	 * @param problem
+	 */
 	@Loggable
 	@RequestMapping(value="/createProblem", method = RequestMethod.POST)
     public void submitProblem(@RequestBody ProblemCreateRequest problem){   
@@ -44,7 +50,14 @@ public class AppController {
 		fileSaveRequest.setCode(fileOperations.createFile(problem.getCode(), problem.getClassName(), problem.getLanguage()));
         mongoService.saveCodeFile(fileSaveRequest);		        
     }
-	
+
+	/**
+	 * Compile the code snippet and return the output if there are no errors
+	 * Return the errors if found
+	 *
+	 * @param problem
+	 * @return
+	 */
 	@Loggable
 	@RequestMapping(value="/compileCode", method = RequestMethod.POST)
 	public CompileResponse compileCode(@RequestBody ProblemCreateRequest problem) {
@@ -74,7 +87,14 @@ public class AppController {
 		
 		return compiler;
 	}
-	
+
+	/**
+	 * Fetch the problems created by an Admin user
+	 *
+	 * @param lang
+	 * @param userId
+	 * @return
+	 */
 	@Loggable
 	@RequestMapping(value="/admin/fetchProblemsByLanguage", method = RequestMethod.GET)
 	public ProblemResponseWrapper fetchProblems(@RequestParam(value = "lang") final String lang, @RequestParam(value = "userId", required = false) final Integer userId) {
@@ -86,7 +106,14 @@ public class AppController {
 		}
 		return problems;
 	}
-	
+
+	/**
+	 * Fetch the problems assigned to a candidate user
+	 *
+	 * @param lang
+	 * @param userName
+	 * @return
+	 */
 	@Loggable
 	@RequestMapping(value="/solver/fetchProblemsByLanguage", method = RequestMethod.GET)
 	public ProblemResponseWrapper fetchSolverProblems(@RequestParam(value = "lang") final String lang, @RequestParam(value = "userName", required = false) final String userName ) {
@@ -97,7 +124,13 @@ public class AppController {
 		return problems;
 		
 	}
-	
+
+	/**
+	 * Fetch the code snippet for a problem id from Mongo DB
+	 *
+	 * @param problemId
+	 * @return
+	 */
 	@Loggable
 	@RequestMapping(value="/fetchProblemCode", method = RequestMethod.GET)
 	public CodeDetailsWrapper fetchProblemCode(@RequestParam(value = "problemId") final String problemId){
@@ -140,7 +173,12 @@ public class AppController {
 		return codeWrapper;
 		
 	}
-	
+
+	/**
+	 * Rate a submitted answer
+	 *
+	 * @param update
+	 */
 	@Loggable
 	@RequestMapping(value="/rateAnswer", method = RequestMethod.POST)
     public void rateAnswer(@RequestBody UpdateRequest update){   
