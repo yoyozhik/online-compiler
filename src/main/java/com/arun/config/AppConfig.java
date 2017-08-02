@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Configuration
-@ComponentScan(basePackages = "com.bootmongo")
+@ComponentScan(basePackages = "com.arun")
 @EnableMongoRepositories
 @EnableAutoConfiguration
 @SpringBootApplication
