@@ -37,6 +37,11 @@ public class MongoServiceImpl implements MongoService {
     @Autowired
     private Mapper dozerMapper;
 
+    /**
+     * Save the source file and metadata in Mongo using GridFsOperations
+     *
+     * @param fileSaveRequest
+     */
     @Loggable
     @Override
     public void saveCodeFile(FileSaveRequest fileSaveRequest) {
@@ -69,6 +74,14 @@ public class MongoServiceImpl implements MongoService {
         }
     }
 
+    /**
+     * Query the source file snippet associated with admin user or candidate.
+     * GridFSDBFile file is converted to List of Strings
+     *
+     * @param id
+     * @param fieldName
+     * @return
+     */
     @Loggable
     @Override
     public List<String> fetchCode(String id, String fieldName) {
@@ -98,6 +111,12 @@ public class MongoServiceImpl implements MongoService {
 
     }
 
+    /**
+     * Fetch problem code snippets by id
+     *
+     * @param id
+     * @return
+     */
     @Loggable
     @Override
     public Problem fetchFilesById(String id) {
@@ -110,6 +129,11 @@ public class MongoServiceImpl implements MongoService {
         return null;
     }
 
+    /**
+     * Save feed back and rating on a submitted answer
+     *
+     * @param updateRequest
+     */
     @Loggable
     @Override
     public void updateAnswer(UpdateRequest updateRequest) {
@@ -122,6 +146,15 @@ public class MongoServiceImpl implements MongoService {
         }
     }
 
+    /**
+     * Fetch problem snippets for users
+     *
+     * @param language
+     * @param userId
+     * @param isAdmin
+     * @param userName
+     * @return
+     */
     @Loggable
     @Override
     public List<ProblemResponse> fetchProblemsByLanguage(String language, Integer userId, boolean isAdmin, String userName) {
@@ -160,6 +193,12 @@ public class MongoServiceImpl implements MongoService {
         }
     }
 
+    /**
+     * Fetch all submitted answers for a question id
+     *
+     * @param id
+     * @return
+     */
     @Loggable
     @Override
     public List<Problem> fetchAnswersforQuestion(String id) {

@@ -31,6 +31,14 @@ import com.arun.helper.FileOperations;
 @Component
 public class FileOperationsImpl implements FileOperations {
 
+	/**
+	 * Create a source file in the given language given the list of code lines
+	 *
+	 * @param codeLines
+	 * @param className
+	 * @param language
+	 * @return
+	 */
 	@Loggable
 	@Override
 	public File createFile(List<String> codeLines, String className, String language) {
@@ -82,7 +90,13 @@ public class FileOperationsImpl implements FileOperations {
 
         return messages;
     }
-	
+
+	/**
+	 * Compile and run the generated source file
+	 *
+	 * @param file
+	 * @return
+	 */
 	@Loggable
 	@Override
 	public List<String> executeCode(File file) {
@@ -97,7 +111,14 @@ public class FileOperationsImpl implements FileOperations {
 		}
 		return output;
 	}
-	
+
+	/**
+	 * Get the program output from InputStream
+	 *
+	 * @param ins
+	 * @return
+	 * @throws Exception
+	 */
 	private List<String> getOutput(InputStream ins) throws Exception {
 		List<String> results = new ArrayList<String>();
 	    String line = null;
@@ -123,7 +144,13 @@ public class FileOperationsImpl implements FileOperations {
 	    pro.waitFor();
 	    return output;	
 	}
-	
+
+	/**
+	 * In progress: Execute python source file
+	 *
+	 * @param file
+	 * @return
+	 */
 	@Loggable
 	public List<String> executePythonCode(File file) {
 		String pythonScriptPath = file.getAbsolutePath();
