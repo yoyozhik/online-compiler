@@ -1,18 +1,12 @@
 package com.arun.response;
 
+import lombok.Data;
+
 import java.util.List;
 
+@Data
 public class ProblemResponseWrapper {
 
 	private List<ProblemResponse> problems;
-
-	public List<ProblemResponse> getProblems() {
-		return problems;
-	}
-
-	public void setProblems(List<ProblemResponse> problems) {
-		this.problems = problems;
-	}
-	
 	
 }

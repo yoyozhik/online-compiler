@@ -1,7 +1,10 @@
 package com.arun.response;
 
+import lombok.Data;
+
 import java.util.List;
 
+@Data
 public class ProblemCode {
 
 	private String problemId;
@@ -12,71 +15,5 @@ public class ProblemCode {
 	private String className;
 	private String feedback;
 	private String rating;
-	
-	public String getProblemId() {
-		return problemId;
-	}
-	
-	public void setProblemId(String problemId) {
-		this.problemId = problemId;
-	}
-	
-	public String getProblemDesc() {
-		return problemDesc;
-	}
-	
-	public void setProblemDesc(String problemDesc) {
-		this.problemDesc = problemDesc;
-	}
-	
-	public List<String> getCodeLines() {
-		return codeLines;
-	}
-	
-	public void setCodeLines(List<String> codeLines) {
-		this.codeLines = codeLines;
-	}
 
-	public String getProblemTitle() {
-		return problemTitle;
-	}
-
-	public void setProblemTitle(String problemTitle) {
-		this.problemTitle = problemTitle;
-	}
-
-	public String getAnsweredBy() {
-		return answeredBy;
-	}
-
-	public void setAnsweredBy(String answeredBy) {
-		this.answeredBy = answeredBy;
-	}
-
-	public String getClassName() {
-		return className;
-	}
-
-	public void setClassName(String className) {
-		this.className = className;
-	}
-
-	public String getFeedback() {
-		return feedback;
-	}
-
-	public void setFeedback(String feedback) {
-		this.feedback = feedback;
-	}
-
-	public String getRating() {
-		return rating;
-	}
-
-	public void setRating(String rating) {
-		this.rating = rating;
-	}
-	
-	
-	
 }

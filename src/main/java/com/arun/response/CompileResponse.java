@@ -1,24 +1,13 @@
 package com.arun.response;
 
+import lombok.Data;
+
 import java.util.List;
 
+@Data
 public class CompileResponse {
 
 	private List<String> compiledOutput;
 	private boolean flag;
-	
-	public List<String> getCompiledOutput() {
-		return compiledOutput;
-	}
-	public void setCompiledOutput(List<String> compiledOutput) {
-		this.compiledOutput = compiledOutput;
-	}
-	public boolean isFlag() {
-		return flag;
-	}
-	public void setFlag(boolean flag) {
-		this.flag = flag;
-	}
-	
-	
+
 }
