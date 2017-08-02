@@ -1,11 +1,11 @@
-package com.bootmongo.service;
+package com.arun.service;
 
 import java.util.List;
 
-import com.bootmongo.domain.Problem;
-import com.bootmongo.request.FileSaveRequest;
-import com.bootmongo.request.UpdateRequest;
-import com.bootmongo.response.ProblemResponse;
+import com.arun.domain.Problem;
+import com.arun.request.FileSaveRequest;
+import com.arun.request.UpdateRequest;
+import com.arun.response.ProblemResponse;
 
 public interface MongoService {
 

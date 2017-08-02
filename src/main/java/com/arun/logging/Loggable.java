@@ -1,4 +1,4 @@
-package com.bootmongo.aop.logging;
+package com.arun.logging;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

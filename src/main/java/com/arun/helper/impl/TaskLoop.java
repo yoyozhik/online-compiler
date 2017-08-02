@@ -1,4 +1,4 @@
-package com.bootmongo.helper.impl;
+package com.arun.helper.impl;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
@@ -18,7 +18,6 @@ public class TaskLoop extends TimerTask {
 	}
 
 	public void run() {
-		System.out.println("here"); //timer's up, do whatever you need to do
 
 		Process pro = null;
 
@@ -32,7 +31,6 @@ public class TaskLoop extends TimerTask {
 			}
 			pro.waitFor();
 		} catch (Exception e) {
-			// TODO: handle exception
 			e.printStackTrace();
 		}
 

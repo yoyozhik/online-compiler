@@ -1,5 +1,5 @@
 
-package com.bootmongo.aop.logging;
+package com.arun.logging;
 
 import org.apache.commons.lang3.time.StopWatch;
 import org.aspectj.lang.ProceedingJoinPoint;

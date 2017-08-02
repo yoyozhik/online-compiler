@@ -1,4 +1,4 @@
-package com.bootmongo.domain;
+package com.arun.domain;
 
 import java.util.Date;
 

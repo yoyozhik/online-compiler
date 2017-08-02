@@ -1,4 +1,4 @@
-package com.bootmongo.service.impl;
+package com.arun.service.impl;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
@@ -18,12 +18,12 @@ import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.gridfs.GridFsOperations;
 import org.springframework.stereotype.Service;
 
-import com.bootmongo.aop.logging.Loggable;
-import com.bootmongo.domain.Problem;
-import com.bootmongo.request.FileSaveRequest;
-import com.bootmongo.request.UpdateRequest;
-import com.bootmongo.response.ProblemResponse;
-import com.bootmongo.service.MongoService;
+import com.arun.logging.Loggable;
+import com.arun.domain.Problem;
+import com.arun.request.FileSaveRequest;
+import com.arun.request.UpdateRequest;
+import com.arun.response.ProblemResponse;
+import com.arun.service.MongoService;
 import com.mongodb.BasicDBObject;
 import com.mongodb.DBObject;
 import com.mongodb.gridfs.GridFSDBFile;

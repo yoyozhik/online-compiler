@@ -1,10 +1,9 @@
-package com.bootmongo.helper.impl;
+package com.arun.helper.impl;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileOutputStream;
-import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
@@ -15,8 +14,6 @@ import java.util.Arrays;
 import java.util.Formatter;
 import java.util.List;
 import java.util.Locale;
-import java.util.Timer;
-import java.util.concurrent.TimeUnit;
 
 import javax.tools.Diagnostic;
 import javax.tools.DiagnosticCollector;
@@ -28,8 +25,8 @@ import javax.tools.ToolProvider;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.stereotype.Component;
 
-import com.bootmongo.aop.logging.Loggable;
-import com.bootmongo.helper.FileOperations;
+import com.arun.logging.Loggable;
+import com.arun.helper.FileOperations;
 
 @Component
 public class FileOperationsImpl implements FileOperations {

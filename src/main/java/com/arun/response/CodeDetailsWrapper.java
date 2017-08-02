@@ -1,4 +1,4 @@
-package com.bootmongo.response;
+package com.arun.response;
 
 import java.util.List;
 

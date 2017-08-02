@@ -1,6 +1,6 @@
-package com.bootmongo.response;
+package com.arun.response;
 
-import com.bootmongo.domain.MetaData;
+import com.arun.domain.MetaData;
 
 public class ProblemResponse {
 

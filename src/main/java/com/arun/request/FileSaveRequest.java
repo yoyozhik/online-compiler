@@ -1,20 +1,19 @@
-package com.bootmongo.domain;
+package com.arun.request;
 
+import java.io.File;
 import java.util.List;
 
-public class MetaData {
+public class FileSaveRequest {
 
 	private String questionId;
-	private String description;
+	private File code;
+	private String problemDescription;
+	private String problemTitle;
 	private String language;
-	private String title;
 	private Integer adminId;
 	private String adminUserName;
 	private List<String> participants;
 	private String answeredBy;
-	private String feedback;
-	private String rating;
-	
 	
 	public String getQuestionId() {
 		return questionId;
@@ -22,11 +21,17 @@ public class MetaData {
 	public void setQuestionId(String questionId) {
 		this.questionId = questionId;
 	}
-	public String getDescription() {
-		return description;
+	public File getCode() {
+		return code;
 	}
-	public void setDescription(String description) {
-		this.description = description;
+	public void setCode(File code) {
+		this.code = code;
+	}
+	public String getProblemDescription() {
+		return problemDescription;
+	}
+	public void setProblemDescription(String problemDescription) {
+		this.problemDescription = problemDescription;
 	}
 	public String getLanguage() {
 		return language;
@@ -34,11 +39,11 @@ public class MetaData {
 	public void setLanguage(String language) {
 		this.language = language;
 	}
-	public String getTitle() {
-		return title;
+	public String getProblemTitle() {
+		return problemTitle;
 	}
-	public void setTitle(String title) {
-		this.title = title;
+	public void setProblemTitle(String problemTitle) {
+		this.problemTitle = problemTitle;
 	}
 	public Integer getAdminId() {
 		return adminId;
@@ -63,18 +68,6 @@ public class MetaData {
 	}
 	public void setAnsweredBy(String answeredBy) {
 		this.answeredBy = answeredBy;
-	}
-	public String getFeedback() {
-		return feedback;
-	}
-	public void setFeedback(String feedback) {
-		this.feedback = feedback;
-	}
-	public String getRating() {
-		return rating;
-	}
-	public void setRating(String rating) {
-		this.rating = rating;
 	}
 	
 	
