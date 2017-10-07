@@ -2,6 +2,7 @@ package com.arun.config;
 
 import org.dozer.DozerBeanMapper;
 import org.dozer.Mapper;
+import org.jsondoc.spring.boot.starter.EnableJSONDoc;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -17,6 +18,7 @@ import java.util.List;
 @ComponentScan(basePackages = "com.arun")
 @EnableMongoRepositories
 @EnableAutoConfiguration
+@EnableJSONDoc
 @SpringBootApplication
 public class AppConfig {
 
