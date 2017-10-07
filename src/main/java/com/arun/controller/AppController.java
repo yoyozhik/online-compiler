@@ -72,6 +72,12 @@ public class AppController {
 	 * @return
 	 */
 	@Loggable
+	@ApiMethod(description = "COMPILE CODE", responsestatuscode = "200 - OK")
+	@ApiHeaders(headers = {
+			@ApiHeader(name = ACCEPT),
+			@ApiHeader(name = CONTENT_TYPE)
+	})
+	@ApiResponseObject
 	@RequestMapping(value="/compileCode", method = RequestMethod.POST)
 	public CompileResponse compileCode(@RequestBody ProblemCreateRequest problem) {
 		CompileResponse compiler = new CompileResponse();
