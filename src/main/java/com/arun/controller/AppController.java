@@ -8,6 +8,10 @@ import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang.StringUtils;
 import org.dozer.Mapper;
 
+import org.jsondoc.core.annotation.ApiHeader;
+import org.jsondoc.core.annotation.ApiHeaders;
+import org.jsondoc.core.annotation.ApiMethod;
+import org.jsondoc.core.annotation.ApiResponseObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -22,6 +26,9 @@ import com.arun.response.CompileResponse;
 import com.arun.response.ProblemCode;
 import com.arun.response.ProblemResponseWrapper;
 import com.arun.service.MongoService;
+
+import static org.springframework.http.HttpHeaders.ACCEPT;
+import static org.springframework.http.HttpHeaders.CONTENT_TYPE;
 
 
 @RestController
@@ -44,6 +51,12 @@ public class AppController {
 	 * @param problem
 	 */
 	@Loggable
+	@ApiMethod(description = "CREATE PROBLEM", responsestatuscode = "200 - OK")
+	@ApiHeaders(headers = {
+			@ApiHeader(name = ACCEPT),
+			@ApiHeader(name = CONTENT_TYPE)
+	})
+	@ApiResponseObject
 	@RequestMapping(value="/createProblem", method = RequestMethod.POST)
     public void submitProblem(@RequestBody ProblemCreateRequest problem){   
 		FileSaveRequest fileSaveRequest = dozerMapper.map(problem, FileSaveRequest.class);	
