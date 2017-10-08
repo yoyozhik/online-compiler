@@ -8,6 +8,7 @@ import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang.StringUtils;
 import org.dozer.Mapper;
 
+import org.jsondoc.core.annotation.ApiBodyObject;
 import org.jsondoc.core.annotation.ApiHeader;
 import org.jsondoc.core.annotation.ApiHeaders;
 import org.jsondoc.core.annotation.ApiMethod;
@@ -220,7 +221,7 @@ public class AppController {
 			@ApiHeader(name = CONTENT_TYPE)
 	})
 	@RequestMapping(value="/rateAnswer", method = RequestMethod.POST)
-    public void rateAnswer(@RequestBody UpdateRequest update){   
+    public void rateAnswer(@ApiBodyObject @RequestBody UpdateRequest update){
         mongoService.updateAnswer(update);	        
     }
 	
