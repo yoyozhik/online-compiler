@@ -115,6 +115,11 @@ public class AppController {
 	 * @return
 	 */
 	@Loggable
+	@ApiMethod(description = "FETCH PROBLEMS", responsestatuscode = "200 - OK")
+	@ApiHeaders(headers = {
+			@ApiHeader(name = ACCEPT),
+			@ApiHeader(name = CONTENT_TYPE)
+	})
 	@RequestMapping(value="/admin/fetchProblemsByLanguage", method = RequestMethod.GET)
 	public ProblemResponseWrapper fetchProblems(@RequestParam(value = "lang") final String lang, @RequestParam(value = "userId", required = false) final Integer userId) {
 		ProblemResponseWrapper problems = new ProblemResponseWrapper();
