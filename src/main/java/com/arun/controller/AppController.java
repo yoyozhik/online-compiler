@@ -161,6 +161,11 @@ public class AppController {
 	 * @return
 	 */
 	@Loggable
+	@ApiMethod(description = "Fetch Problem Code", responsestatuscode = "200 - OK")
+	@ApiHeaders(headers = {
+			@ApiHeader(name = ACCEPT),
+			@ApiHeader(name = CONTENT_TYPE)
+	})
 	@RequestMapping(value="/fetchProblemCode", method = RequestMethod.GET)
 	public CodeDetailsWrapper fetchProblemCode(@RequestParam(value = "problemId") final String problemId){
 		CodeDetailsWrapper codeWrapper = new CodeDetailsWrapper();
@@ -209,6 +214,11 @@ public class AppController {
 	 * @param update
 	 */
 	@Loggable
+	@ApiMethod(description = "Rate Answer", responsestatuscode = "200 - OK")
+	@ApiHeaders(headers = {
+			@ApiHeader(name = ACCEPT),
+			@ApiHeader(name = CONTENT_TYPE)
+	})
 	@RequestMapping(value="/rateAnswer", method = RequestMethod.POST)
     public void rateAnswer(@RequestBody UpdateRequest update){   
         mongoService.updateAnswer(update);	        
