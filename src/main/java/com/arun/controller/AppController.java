@@ -123,7 +123,7 @@ public class AppController {
 			@ApiHeader(name = CONTENT_TYPE)
 	})
 	@RequestMapping(value="/admin/fetchProblemsByLanguage", method = RequestMethod.GET)
-	public ProblemResponseWrapper fetchProblems(@RequestParam(value = "lang") final String lang, @RequestParam(value = "userId", required = false) final Integer userId) {
+	public ProblemResponseWrapper fetchProblems(@ApiQueryParam(name = "Language") @RequestParam(value = "lang") final String lang, @ApiQueryParam(name = "User Id") @RequestParam(value = "userId", required = false) final Integer userId) {
 		ProblemResponseWrapper problems = new ProblemResponseWrapper();
 		if(null != userId){
 			problems.setProblems(mongoService.fetchProblemsByLanguage(lang, userId, true, null));
