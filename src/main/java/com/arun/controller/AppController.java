@@ -12,6 +12,7 @@ import org.jsondoc.core.annotation.ApiBodyObject;
 import org.jsondoc.core.annotation.ApiHeader;
 import org.jsondoc.core.annotation.ApiHeaders;
 import org.jsondoc.core.annotation.ApiMethod;
+import org.jsondoc.core.annotation.ApiQueryParam;
 import org.jsondoc.core.annotation.ApiResponseObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -146,7 +147,7 @@ public class AppController {
 			@ApiHeader(name = CONTENT_TYPE)
 	})
 	@RequestMapping(value="/solver/fetchProblemsByLanguage", method = RequestMethod.GET)
-	public ProblemResponseWrapper fetchSolverProblems(@RequestParam(value = "lang") final String lang, @RequestParam(value = "userName", required = false) final String userName ) {
+	public ProblemResponseWrapper fetchSolverProblems(@ApiQueryParam(name = "Language") @RequestParam(value = "lang") final String lang, @ApiQueryParam(name = "User Name") @RequestParam(value = "userName", required = false) final String userName ) {
 		ProblemResponseWrapper problems = new ProblemResponseWrapper();
 		if(StringUtils.isNotBlank(userName)){
 			problems.setProblems(mongoService.fetchProblemsByLanguage(lang, 0, false, userName));
@@ -168,7 +169,7 @@ public class AppController {
 			@ApiHeader(name = CONTENT_TYPE)
 	})
 	@RequestMapping(value="/fetchProblemCode", method = RequestMethod.GET)
-	public CodeDetailsWrapper fetchProblemCode(@RequestParam(value = "problemId") final String problemId){
+	public CodeDetailsWrapper fetchProblemCode(@ApiQueryParam(name = "Problem Id") @RequestParam(value = "problemId") final String problemId){
 		CodeDetailsWrapper codeWrapper = new CodeDetailsWrapper();
 		List<ProblemCode> answersResponse = new ArrayList<ProblemCode>();
 		Problem problem = mongoService.fetchFilesById(problemId);
