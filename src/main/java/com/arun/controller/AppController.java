@@ -60,7 +60,7 @@ public class AppController {
 	})
 	@ApiResponseObject
 	@RequestMapping(value="/createProblem", method = RequestMethod.POST)
-    public void submitProblem(@RequestBody ProblemCreateRequest problem){   
+    public void submitProblem(@ApiBodyObject @RequestBody ProblemCreateRequest problem){
 		FileSaveRequest fileSaveRequest = dozerMapper.map(problem, FileSaveRequest.class);	
 		fileSaveRequest.setCode(fileOperations.createFile(problem.getCode(), problem.getClassName(), problem.getLanguage()));
         mongoService.saveCodeFile(fileSaveRequest);		        
