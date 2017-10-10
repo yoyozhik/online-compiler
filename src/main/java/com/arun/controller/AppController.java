@@ -81,7 +81,7 @@ public class AppController {
 	})
 	@ApiResponseObject
 	@RequestMapping(value="/compileCode", method = RequestMethod.POST)
-	public CompileResponse compileCode(@RequestBody ProblemCreateRequest problem) {
+	public CompileResponse compileCode(@ApiBodyObject @RequestBody ProblemCreateRequest problem) {
 		CompileResponse compiler = new CompileResponse();
 		List<String> output = null;
 		File codeFile = fileOperations.createFile(problem.getCode(), problem.getClassName(), problem.getLanguage());
