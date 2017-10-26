@@ -8,12 +8,8 @@ import org.springframework.web.servlet.ModelAndView;
 public class ViewController {
 
     @RequestMapping(value = "/")
-    public ModelAndView uploadView() {
-       return new ModelAndView("index");
+    public ModelAndView homeView() {
+       return new ModelAndView("home");
     }
 
-    @RequestMapping(value = "/sales-train-create-problem")
-    public ModelAndView redirectToSalesTrain() {
-       return new ModelAndView("sales-train-create-problem");
-    }
 }

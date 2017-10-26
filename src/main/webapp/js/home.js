@@ -369,7 +369,7 @@ jQuery(function ($) {
                         'adminId': 1,
                         'adminUserName': 'admin',
                         'questionId':'',
-                        'participants': ['akshay_oommen@apple.com', 'cpahuja@apple.com', 'arun_mohan@apple.com']
+                        'participants': ['job@gmail.com', 'rob@gmail.com', 'ned@gmail.com']
                 };
             }
 

@@ -87,9 +87,9 @@
                     <select id="userName">
                         <option value="" selected="selected">Choose one...</option>
                         <option value="admin">Admin</option>
-                        <option value="akshay_oommen@apple.com">Akshay</option>
-                        <option value="arun_mohan@apple.com">Arun</option>
-                        <option value="cpahuja@apple.com">Chirag</option>
+                        <option value="jon@gmail.com">Jon</option>
+                        <option value="rob@gmail.com">Rob</option>
+                        <option value="ned@gmail.com">Ned</option>
                     </select>
                 </div>
             </div>
@@ -196,5 +196,5 @@
 </script>
 
 <jsp:include page="./includes/footer.jsp" flush="true" />
-<script type="text/javascript" src="js/salesTrainCreateProblem.js"></script>
+<script type="text/javascript" src="js/home.js"></script>
 </html>
